@@ -15,10 +15,15 @@ module.exports = (env) => {
       path: path.resolve(__dirname, 'dist'),
       filename: '[name].[contenthash].js',
       clean: true, // dọn dẹp thư mục sau khi build
+      assetModuleFilename: '[file]',
     },
     devtool: isDevelopment ? 'source-map' : false,
     module: {
       rules: [
+        {
+          test: /\.(png|svg|jpg|jpeg|gif|pdf)$/i,
+          type: 'asset/resource',
+        },
         {
           test: /\.s[ac]ss|css$/,
           use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],

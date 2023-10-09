@@ -1,4 +1,5 @@
 import sum from './utils';
+import domHandler from './dom';
 import './styles/style.css';
 import './styles/style.scss';
 
@@ -26,3 +27,5 @@ const main = async () => {
 };
 
 main();
+
+domHandler();
